@@ -14,7 +14,7 @@ use lithium\data\Connections;
 Connections::add('gmapapi', array(
     'type'     => 'http',
     'adapter'  => 'gMapApi',
-    'key'    => 'AIzaSyA7yJKKr4EZgnCL32tXwGiHDgMajGKNuP0',
+    'key'    => '',
 ));
 
 ?>
