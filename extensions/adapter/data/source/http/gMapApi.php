@@ -53,6 +53,18 @@ class gMapApi extends \lithium\data\source\Http {
 		return $this->item($query->model(), $result['results'], array('class' => 'set'));
 	}
 	
+	public function cast($entity, array $data, array $options = array()) {
+		$model = $entity->model();
+		var_dump($data);
+		foreach ($data as $key => $val) {
+			if (!is_array($val)&&!is_numeric($key)) {
+				continue;
+			}
+		$data[$key] = $this->item($model, $val, array('class' => 'entity'));
+		}
+    	return parent::cast($entity, $data, $options);
+	}
+	
 }
 
 ?>
